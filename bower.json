@@ -1,0 +1,26 @@
+{
+  "name": "angular-todo",
+  "version": "1.0.0",
+  "homepage": "http://www.atwright.co.uk/",
+  "authors": [
+    "Andy Wright <atwright147@gmail.com>"
+  ],
+  "description": "My Angular Todo",
+  "main": "index.html",
+  "keywords": [
+    "angular",
+    "todo"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.4",
+    "bootstrap": "~3.3.5"
+  }
+}
