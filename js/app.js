@@ -13,4 +13,8 @@ angular.module('app', []).controller('TodoController', function($scope) {
 		{title: 'Print Photos',  description: 'Get photos printed at Boots'},
 		{title: 'Book Holiday',  description: 'Book the hotel we found in Goa'}
 	];
+
+	$scope.removeItem = function(item) {
+		$scope.todos.splice(item, 1);
+	}
 });
