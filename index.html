@@ -20,8 +20,8 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="item in items">
-					<td>{{item.title}}<br>
+				<tr ng-repeat="item in todos">
+					<td><strong>{{item.title}}</strong><br>
 						{{item.description}}</td>
 					<td>
 						<button ng-click="toggleComplete(item)" class="btn btn-primary">Remove</button>
