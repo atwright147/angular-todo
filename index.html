@@ -12,6 +12,28 @@
 			<h1>{{title}}</h1>
 		</div>
 
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in items">
+					<td>{{item.title}}<br>
+						{{item.description}}</td>
+					<td>
+						<button ng-click="toggleComplete(item)" class="btn btn-primary">Remove</button>
+						<button ng-click="editItem(item)" class="btn btn-info">Remove</button>
+						<button ng-click="removeItem(item)" class="btn btn-danger">Remove</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<hr>
+
 		<form name="todoForm">
 			<div class="form-group">
 				<label for="todo-title">Title</label>
