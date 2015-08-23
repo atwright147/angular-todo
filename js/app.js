@@ -6,7 +6,7 @@
 angular.module('app', []);
 
 angular.module('app', []).controller('TodoController', function($scope) {
-	$scope.title = 'Angular Todo List';
+	$scope.pageTitle = 'Angular Todo List';
 
 	$scope.todos = [
 		{title: 'Buy Groceries', description: 'Fruit, Cereal, Cola, Pies, etc'},
