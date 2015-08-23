@@ -16,5 +16,5 @@ angular.module('app', []).controller('TodoController', function($scope) {
 
 	$scope.removeItem = function(item) {
 		$scope.todos.splice(item, 1);
-	}
+	};
 });
