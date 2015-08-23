@@ -33,5 +33,7 @@ angular.module('app', []).controller('TodoController', function($scope) {
 		$scope.mode = 'edit';
 		$scope.todos.splice(item, 1);
 		$scope.todos.push($scope.formData);
+		$scope.formData = {};
+		$scope.mode = '';
 	};
 });
