@@ -24,6 +24,14 @@ angular.module('app', []).controller('TodoController', function($scope) {
 	};
 
 	$scope.updateItem = function(item) {
-		$scope.formData = item;
+		$scope.mode = 'edit';
+		var editableItem = angular.copy(item);
+		$scope.formData  = editableItem;
+	};
+
+	$scope.updateItemSave = function(item) {
+		$scope.mode = 'edit';
+		$scope.todos.splice(item, 1);
+		$scope.todos.push($scope.formData);
 	};
 });

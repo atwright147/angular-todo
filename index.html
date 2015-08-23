@@ -59,7 +59,8 @@
 					<input type="checkbox" ng-model="formData.complete"> Complete
 				</label>
 			</div>
-			<button class="btn btn-default btn-block" ng-click="addItem()">Save</button>			
+			<button ng-if="mode == 'edit'" class="btn btn-default btn-block" ng-click="updateItemSave()">Update</button>			
+			<button ng-if="mode != 'edit'" class="btn btn-default btn-block" ng-click="addItem()">Create</button>			
 		</form>
 	</div>
 
