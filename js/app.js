@@ -22,4 +22,8 @@ angular.module('app', []).controller('TodoController', function($scope) {
 		$scope.todos.push($scope.formData);
 		$scope.formData = {};
 	};
+
+	$scope.updateItem = function(item) {
+		$scope.formData = item;
+	};
 });
