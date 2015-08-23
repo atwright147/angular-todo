@@ -19,7 +19,6 @@ angular.module('app', []).controller('TodoController', function($scope) {
 	};
 
 	$scope.addItem = function() {
-		console.log($scope);
 		$scope.todos.push($scope.formData);
 		$scope.formData = {};
 	};
