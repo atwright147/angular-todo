@@ -48,18 +48,18 @@
 		<form name="todoForm">
 			<div class="form-group">
 				<label for="todo-title">Title</label>
-				<input type="text" class="form-control" id="todo-title">
+				<input type="text" class="form-control" id="todo-title" name="title" ng-model="formData.title">
 			</div>
 			<div class="form-group">
 				<label for="todo-description">Description</label>
-				<textarea rows="3" class="form-control" id="todo-description"></textarea>
+				<textarea rows="3" class="form-control" id="todo-description" name="description" ng-model="formData.description"></textarea>
 			</div>
 			<div class="checkbox">
 				<label>
-					<input type="checkbox"> Complete
+					<input type="checkbox" ng-model="formData.complete"> Complete
 				</label>
 			</div>
-			<button type="submit" class="btn btn-default btn-block">Save</button>			
+			<button class="btn btn-default btn-block" ng-click="addItem()">Save</button>			
 		</form>
 	</div>
 
