@@ -51,17 +51,17 @@ angular.module('app').controller('TodoController', function($scope, $webSql) {
 	$scope.index();
 
 	$scope.removeItem = function(itemId) {
-		// $scope.todos.splice(itemId, 1);
-		$scope.db.del("todos", {"id": itemId});
-		$scope.index();
+		$scope.db.del("todos", {"id": itemId}).then(function(results) {
+			$scope.index();
+		});
 	};
 
 	$scope.addItem = function() {
 		$scope.db.insert('todos', $scope.formData).then(function(results) {
 			console.info(results.insertId);
+			$scope.formData = {};
+			$scope.index();
 		});
-		$scope.formData = {};
-		$scope.index();
 	};
 
 	$scope.updateItem = function(item) {
