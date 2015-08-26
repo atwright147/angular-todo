@@ -12,7 +12,7 @@
 			<h1>{{pageTitle}}</h1>
 		</div>
 
-		<table class="table">
+		<table class="table" ng-if="todos.length">
 			<thead>
 				<tr>
 					<th>ID</th>
@@ -44,6 +44,7 @@
 				</tr>
 			</tbody>
 		</table>
+		<p ng-if="!todos.length">Please add some todo items.</p>
 
 		<hr>
 
