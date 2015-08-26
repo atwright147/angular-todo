@@ -3,9 +3,9 @@
 *
 * Description
 */
-angular.module('app', []);
+angular.module('app', ['angular-websql']);
 
-angular.module('app', []).controller('TodoController', function($scope) {
+angular.module('app').controller('TodoController', function($scope, $webSql) {
 	$scope.pageTitle = 'Angular Todo List';
 
 	$scope.todos = [
@@ -13,6 +13,8 @@ angular.module('app', []).controller('TodoController', function($scope) {
 		{title: 'Print Photos',  description: 'Get photos printed at Boots'},
 		{title: 'Book Holiday',  description: 'Book the hotel we found in Goa'}
 	];
+
+	$scope.db = $webSql.openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
 
 	$scope.removeItem = function(item) {
 		$scope.todos.splice(item, 1);
