@@ -55,8 +55,11 @@ angular.module('app').controller('TodoController', function($scope, $webSql) {
 	};
 
 	$scope.addItem = function() {
-		$scope.todos.push($scope.formData);
+		$scope.db.insert('todos', $scope.formData).then(function(results) {
+			console.info(results.insertId);
+		});
 		$scope.formData = {};
+		$scope.index();
 	};
 
 	$scope.updateItem = function(item) {
