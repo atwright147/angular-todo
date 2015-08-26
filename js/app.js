@@ -40,12 +40,15 @@ angular.module('app').controller('TodoController', function($scope, $webSql) {
 		}
 	});
 
-	$scope.db.selectAll('todos').then(function(results) {
-		$scope.todos = [];
-		for(var i=0; i < results.rows.length; i++) {
-			$scope.todos.push(results.rows.item(i));
-		}
-	});
+	$scope.index = function() {
+		$scope.db.selectAll('todos').then(function(results) {
+			$scope.todos = [];
+			for(var i=0; i < results.rows.length; i++) {
+				$scope.todos.push(results.rows.item(i));
+			}
+		});
+	};
+	$scope.index();
 
 	$scope.removeItem = function(item) {
 		$scope.todos.splice(item, 1);
