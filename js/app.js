@@ -5,6 +5,12 @@
 */
 angular.module('app', ['angular-websql']);
 
+angular.module('app').filter('yesNo', function() {
+	return function(boolean) {
+		return boolean ? 'Yes' : 'No';
+	}
+});
+
 angular.module('app').controller('TodoController', function($scope, $webSql) {
 	$scope.pageTitle = 'Angular Todo List';
 

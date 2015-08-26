@@ -17,6 +17,7 @@
 				<tr>
 					<th>ID</th>
 					<th>Title</th>
+					<th>Complete?</th>
 					<th>Action</th>
 				</tr>
 			</thead>
@@ -25,6 +26,7 @@
 					<td>{{item.id}}</td>
 					<td><strong>{{item.title}}</strong><br>
 						{{item.description}}</td>
+					<td>{{item.complete | yesNo}}</td>
 					<td>
 						<div class="btn-group" role="group">
 							<button ng-click="toggleComplete(item)" class="btn btn-default">
