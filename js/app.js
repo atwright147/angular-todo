@@ -50,8 +50,10 @@ angular.module('app').controller('TodoController', function($scope, $webSql) {
 	};
 	$scope.index();
 
-	$scope.removeItem = function(item) {
-		$scope.todos.splice(item, 1);
+	$scope.removeItem = function(itemId) {
+		// $scope.todos.splice(itemId, 1);
+		$scope.db.del("todos", {"id": itemId});
+		$scope.index();
 	};
 
 	$scope.addItem = function() {
