@@ -79,9 +79,12 @@ angular.module('app').controller('TodoController', function($scope, $webSql) {
 
 	$scope.updateItemSave = function(item) {
 		$scope.mode = 'edit';
-		$scope.todos.splice(item, 1);
-		$scope.todos.push($scope.formData);
-		$scope.formData = {};
-		$scope.mode = '';
+		$scope.db.update("todos", {"title": $scope.formData.title, "description": $scope.formData.description, "complete": $scope.formData.complete}, {
+			'id': $scope.formData.id
+		}).then(function() {
+			$scope.formData = {};
+			$scope.mode = '';
+			$scope.index();
+		});
 	};
 });
