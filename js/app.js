@@ -42,7 +42,7 @@ angular.module('app').controller('TodoController', function($scope, $webSql) {
 			"null": "NULL"
 		},
 		"complete": {
-			"type": "INTEGER",
+			"type": "BOOLEAN",
 			"default": 0
 		}
 	});
