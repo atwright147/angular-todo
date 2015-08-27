@@ -94,4 +94,23 @@ angular.module('app').controller('TodoController', function($scope, $webSql) {
 			$scope.index();
 		});
 	};
+
+	$scope.toggleComplete = function(item) {
+		$scope.db.select("todos", {
+			'id': item.id
+		}).then(function(result) {
+			var boolComplete = false;
+			if (result.rows.item(0).complete == 'false') {
+				boolComplete = true;
+			}
+			
+			$scope.db.update("todos", {"complete": boolComplete}, {
+				'id': item.id
+			}).then(function(result) {
+				$scope.index();
+			});
+		});
+
+
+	};
 });
