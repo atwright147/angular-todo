@@ -6,8 +6,14 @@
 angular.module('app', ['angular-websql']);
 
 angular.module('app').filter('yesNo', function() {
-	return function(boolean) {
-		return boolean ? 'Yes' : 'No';
+	return function(data) {
+		var out = 'Yes';
+		if (data && typeof data == 'string' && data.toLowerCase() == 'false') {
+			out = 'No';
+		} else {
+			out = !!data ? 'Yes' : 'No';
+		}
+		return out;
 	}
 });
 
