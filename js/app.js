@@ -71,6 +71,7 @@ angular.module('app').controller('TodoController', function($scope, $webSql) {
 	};
 
 	$scope.addItem = function() {
+		$scope.formData.complete = $scope.formData.complete ? 1 : 0;
 		$scope.db.insert('todos', $scope.formData).then(function(results) {
 			console.info(results.insertId);
 			$scope.formData = {};
@@ -86,8 +87,7 @@ angular.module('app').controller('TodoController', function($scope, $webSql) {
 
 	$scope.updateItemSave = function(item) {
 		$scope.mode = 'edit';
-		var completeBool = !!$scope.formData.complete;
-		$scope.db.update("todos", {"title": $scope.formData.title, "description": $scope.formData.description, "complete": completeBool}, {
+		$scope.db.update("todos", {"title": $scope.formData.title, "description": $scope.formData.description, "complete": $scope.formData.complete ? 1 : 0}, {
 			'id': $scope.formData.id
 		}).then(function() {
 			$scope.formData = {};
