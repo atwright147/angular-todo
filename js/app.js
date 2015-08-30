@@ -34,11 +34,6 @@ angular.module('app').controller('TodoController', function($scope, $webSql) {
 			"primary": true, // primary
 			"auto_increment": true // auto increment
 		},
-		"created_at":{
-			"type": "TIMESTAMP",
-			"null": "NOT NULL",
-			"default": "CURRENT_TIMESTAMP" // default value
-		},
 		"title":{
 			"type": "TEXT",
 			"null": "NOT NULL"
@@ -51,6 +46,11 @@ angular.module('app').controller('TodoController', function($scope, $webSql) {
 			"type": "BOOLEAN",
 			"null": "NOT NULL",
 			"default": 0
+		},
+		"created_at":{
+			"type": "TIMESTAMP",
+			"null": "NOT NULL",
+			"default": "CURRENT_TIMESTAMP" // default value
 		}
 	});
 
