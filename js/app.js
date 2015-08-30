@@ -91,8 +91,9 @@ angular.module('app').controller('TodoController', function($scope, $webSql) {
 	};
 
 	$scope.updateItemSave = function(item) {
+		var _now =  new Date().toISOString().slice(0, 19).replace('T', ' ');
 		$scope.mode = 'edit';
-		$scope.db.update("todos", {"title": $scope.formData.title, "description": $scope.formData.description, "complete": $scope.formData.complete ? 1 : 0}, {
+		$scope.db.update("todos", {"title": $scope.formData.title, "description": $scope.formData.description, "complete": $scope.formData.complete ? 1 : 0, "updated_at": _now}, {
 			'id': $scope.formData.id
 		}).then(function() {
 			$scope.formData = {};
