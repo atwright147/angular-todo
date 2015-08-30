@@ -97,21 +97,11 @@ angular.module('app').controller('TodoController', function($scope, $webSql) {
 	};
 
 	$scope.toggleComplete = function(item) {
-		$scope.db.select("todos", {
+		$scope.db.update("todos", {"complete": !item.complete ? 1 : 0}, {
 			'id': item.id
 		}).then(function(result) {
-			var boolComplete = false;
-			if (result.rows.item(0).complete == 'false') {
-				boolComplete = true;
-			}
-			
-			$scope.db.update("todos", {"complete": boolComplete}, {
-				'id': item.id
-			}).then(function(result) {
-				$scope.index();
-			});
+			$scope.index();
 		});
-
-
 	};
+
 });
