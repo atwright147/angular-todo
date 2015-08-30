@@ -30,8 +30,8 @@
 					<td>
 						<div class="btn-group" role="group">
 							<button ng-click="toggleComplete(item)" class="btn btn-default">
-								<span ng-if="item.complete == 'false'" class="glyphicon glyphicon-ok"     aria-hidden="true" title="Mark as complete"></span>
-								<span ng-if="item.complete == 'true'"  class="glyphicon glyphicon-remove" aria-hidden="true" title="Mark as incomplete"></span>
+								<span ng-if="!item.complete" class="glyphicon glyphicon-ok"     aria-hidden="true" title="Mark as complete"></span>
+								<span ng-if="item.complete"  class="glyphicon glyphicon-remove" aria-hidden="true" title="Mark as incomplete"></span>
 								<span class="sr-only">Complete</span>
 							</button>
 							<button ng-click="updateItem(item)" class="btn btn-default">
