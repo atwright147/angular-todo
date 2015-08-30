@@ -51,6 +51,11 @@ angular.module('app').controller('TodoController', function($scope, $webSql) {
 			"type": "TIMESTAMP",
 			"null": "NOT NULL",
 			"default": "CURRENT_TIMESTAMP" // default value
+		},
+		"updated_at":{
+			"type": "TIMESTAMP",
+			"null": "NOT NULL",
+			"default": "CURRENT_TIMESTAMP" // default value
 		}
 	});
 
