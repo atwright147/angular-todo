@@ -62,7 +62,7 @@
 			</div>
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" ng-checked="formData.complete"> Complete
+					<input type="checkbox" ng-model="formData.complete" ng-true-value="1" ng-false-value="0"> Complete
 				</label>
 			</div>
 			<button ng-if="mode == 'edit'" class="btn btn-default btn-block" ng-click="updateItemSave()">Update</button>			
