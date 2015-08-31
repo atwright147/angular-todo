@@ -21,10 +21,7 @@
   ],
   "dependencies": {
     "angular": "~1.4.4",
-    "angular-websql": "~1.0.2",
+    "angular-websql": "git@github.com:atwright147/angular-websql.git#master",
     "bootstrap": "~3.3.5"
-  },
-  "resolutions": {
-    "angular": "~1.4.4"
   }
 }
